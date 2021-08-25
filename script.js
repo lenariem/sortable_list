@@ -2,16 +2,16 @@ const draggable_list = document.getElementById('draggable-list');
 const check = document.getElementById('check');
 
 const largestCountries = [
-  'Russia (17,098,242)',
-  'Canada (9,984,670)',
-  'United States (9,826,675)',
-  'China (9,596,961)',
-  'Brazil (8,514,877)',
-  'Australia (7,741,220)',
-  'India (3,287,263)',
-  'Argentina (2,780,400)',
-  'Kazakhstan	(2,724,900)',
-  'Algeria (2,381,741)'
+  'Russia',
+  'Canada',
+  'United States',
+  'China',
+  'Brazil',
+  'Australia',
+  'India',
+  'Argentina',
+  'Kazakhstan',
+  'Algeria'
 ];
 
 // Store list items

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --border-color: #b8b8b8;
+  --background-color: #c3c7ca;
+  --text-color: #34444f;
+  --overlay-color: rgba(255, 255, 255, 0.651);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url(./O9FG4R0.jpg) center / cover no-repeat fixed;
+  /* background-image: url(./map.png); 
+  background-size: contain; */
+  /* background-color: #fff; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-height: 100vh;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  background-color: var(--overlay-color);
+  width: 100%;
+  text-align: center;
+  padding: 0.8%;
+  margin: 0 auto 10px;
+}
+
+.descr {
+  font-size: 24px;
+  margin: 0 auto 5px auto;
+  text-shadow: 1px 1px 2px var(--overlay-color);
+}
+
+.draggable-list {
+  border: 1px solid var(--border-color);
+  /* color: var(--text-color); */
+  padding: 0;
+  list-style-type: none;
+  width: 18%;
+}
+
+.draggable-list li {
+  background-color: var(--overlay-color);
+  display: flex;
+  text-transform: uppercase;
+  font-weight: 600;
+  /* flex: 1; */
+}
+
+/* all except last */
+.draggable-list li:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.draggable-list .number {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  height: 60px;
+  width: 60px;
+}
+
+.draggable-list li.over .draggable {
+  background-color: #eaeaea;
+}
+
+.draggable-list .country-name {
+  margin: 0 20px 0 0;
+}
+
+.draggable-list li.right .country-name {
+  color: #3ae374;
+}
+
+.draggable-list li.wrong .country-name {
+  color: #ff3838;
+}
+
+.draggable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  flex: 1;
+}
+
+.btn-container {
+  margin-bottom: 1%;
+}
+.check-btn {
+  /* display: block; */
+  background-color: var(--background-color);
+  border: none;
+  /* color: var(--text-color); */
+  font-size: 18px;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+.check-btn:active {
+  transform: scale(0.98);
+}
+
+.check-btn:focus {
+  outline: none;
+}
