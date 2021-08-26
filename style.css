@@ -55,6 +55,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 600;
   flex: 1;
+  letter-spacing: 1px;
   /* height: 60px */
 }
 
@@ -84,7 +85,8 @@ h1 {
 }
 
 .draggable-list li.right .country-name {
-  color: #3ae374;
+  color: #13c752;
+  text-shadow: 1px 1px 2px var(--text-color);
 }
 
 .draggable-list li.wrong .country-name {
