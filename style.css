@@ -72,8 +72,6 @@ h1 {
   font-size: 28px;
   height: 60px;
   width: 60px;
-  
-  /* border-top: 1px solid var(--border-color);  */
 }
 
 .draggable-list li.over .draggable {
@@ -118,4 +116,51 @@ h1 {
 
 .check-btn:focus {
   outline: none;
+}
+
+@media (max-width: 1450px) {
+  .draggable-list {
+    width: 25%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .draggable-list {
+    width: 35%;
+  }
+}
+
+@media (max-width: 760px) {
+  h1 {
+    padding: 1%;
+    font-size: 24px;
+  }
+
+  .descr {
+    font-size: 18px;
+  }
+
+  .draggable-list {
+    width: 45%;
+  }
+}
+
+@media (max-width: 570px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .descr {
+    font-size: 16px;
+  }
+
+  .draggable-list {
+    width: 65%;
+  }
+}
+
+@media (max-width: 570px) {
+  .draggable-list {
+    width: 85%;
+  }
 }
