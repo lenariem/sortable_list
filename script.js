@@ -55,7 +55,6 @@ let dragStartIndex;
 
 function getProperty() {
   const property = title.value;
-  console.log("property " + property);
   countriesArray = [];
   if (property === "area") {
     countriesArray = [...largestCountries];
@@ -67,7 +66,6 @@ function getProperty() {
    countriesArray = [...largestGDP];
    answerImg.style.backgroundImage = "url('./gdp.jpg')";
   }
-  console.log("countriesArray from getProperty " + countriesArray);
   draggable_list.innerHTML = ``;
   return countriesArray;
 }
@@ -75,9 +73,6 @@ function getProperty() {
 // Insert list items into DOM
 function createList() {
   getProperty();
-  console.log("countriesArray from createList " + countriesArray);
-  listItems = [];
-  console.log("listItems " + listItems);
   [...countriesArray]
     .map(item => ({value: item, sort: Math.random()}))
     .sort((a, b) => a.sort - b.sort)
@@ -95,12 +90,10 @@ function createList() {
 
     listItems.push(listItem);
     draggable_list.appendChild(listItem);
-    console.log("listItems " + listItems);
   });
 
   addEventListeners();
 }
-
 createList();
 
 function dragStart() {
