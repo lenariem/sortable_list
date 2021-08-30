@@ -11,8 +11,14 @@
 </head>
 
 <body>
-  <h1>TOP 10 largest countries by area in km<sup>2</sup></h1>
-  <p class="descr">Drag and drop the items into their corresponding spots 
+  <h1>TOP 10 largest countries by 
+    <select class="title-select" id="title">
+      <option value="area">area in km<sup>2</sup></option>
+      <option value="population">population</option>
+      <option value="gdp">Gross Domestic Product</option>
+    </select>
+  </h1>
+  <p class="descr">Drag and drop the items into their corresponding spots
     <span class="btn-container">
       <button class="btn small-btn" id="restart" title="start again"><i class="fas fa-redo"></i></button>
       <button class="btn small-btn" id="answer" title="show answer"><i class="fas fa-question"></i></button>
@@ -25,7 +31,7 @@
     <i class="fas fa-check"></i>
   </button>
 
-  <div class="answer" id="overlay">
+  <div class="answer" id="answer-overlay">
     <button id="close-btn" class="btn close-btn"><i class="fas fa-times"></i></button>
   </div>
 
