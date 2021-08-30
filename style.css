@@ -12,7 +12,7 @@
 }
 
 body {
-  background: url(./O9FG4R0.jpg) center / cover no-repeat fixed;
+  background: url(./bg.jpg) center / cover no-repeat fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,18 +130,17 @@ h1 {
   padding: 10px;
 }
 
-.overlay{
+.answer {
   position: absolute;
-  margin: 20px auto 0; 
+  margin: 20px auto 0;
   width: 80%;
-  height: 95vh; 
-  background-image: url(./map.png);
+  height: 95vh;
+  background-image: url(./area.png);
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateX(-200%);
   transition: transform 0.8s ease-in-out;
 }
-
 
 @media (max-width: 1450px) {
   .draggable-list {
@@ -152,6 +151,11 @@ h1 {
 @media (max-width: 1024px) {
   .draggable-list {
     width: 35%;
+  }
+
+  .close-btn {
+    top: 15px;
+    right: 35px;
   }
 }
 
@@ -168,6 +172,7 @@ h1 {
   .draggable-list {
     width: 45%;
   }
+
 }
 
 @media (max-width: 570px) {
