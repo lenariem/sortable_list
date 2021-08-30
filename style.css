@@ -13,9 +13,6 @@
 
 body {
   background: url(./O9FG4R0.jpg) center / cover no-repeat fixed;
-  /* background-image: url(./map.png); 
-  background-size: contain; */
-  /* background-color: #fff; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,11 +36,11 @@ h1 {
   text-shadow: 1px 1px 2px var(--overlay-color);
   padding: 0 1%;
   text-align: center;
+  width: 100%;
 }
 
 .draggable-list {
   border: 1px solid var(--border-color);
-  /* color: var(--text-color); */
   padding: 0;
   list-style-type: none;
   width: 18%;
@@ -56,7 +53,6 @@ h1 {
   font-weight: 600;
   flex: 1;
   letter-spacing: 1px;
-  /* height: 60px */
 }
 
 /* all except last */
@@ -100,23 +96,52 @@ h1 {
   flex: 1;
 }
 
-.check-btn {
-  /* display: block; */
+.btn {
   background-color: var(--background-color);
   border: none;
-  /* color: var(--text-color); */
-  font-size: 18px;
-  padding: 8px 20px;
   cursor: pointer;
 }
 
-.check-btn:active {
+.btn:active {
   transform: scale(0.98);
 }
 
-.check-btn:focus {
+.btn:focus {
   outline: none;
 }
+
+.check-btn {
+  font-size: 18px;
+  padding: 8px 20px;
+}
+
+.small-btn {
+  padding: 10px;
+}
+
+.btn-container {
+  margin-left: 1%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  padding: 10px;
+}
+
+.overlay{
+  position: absolute;
+  margin: 20px auto 0; 
+  width: 80%;
+  height: 95vh; 
+  background-image: url(./map.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateX(-200%);
+  transition: transform 0.8s ease-in-out;
+}
+
 
 @media (max-width: 1450px) {
   .draggable-list {

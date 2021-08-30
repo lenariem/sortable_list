@@ -1,10 +1,14 @@
 const draggable_list = document.getElementById('draggable-list');
 const check = document.getElementById('check');
+const restart = document.getElementById('restart');
+const answerBtn = document.getElementById('answer');
+const answerImg = document.getElementById('overlay');
+const answerClose = document.getElementById('close-btn');
 
 const largestCountries = [
   'Russia',
   'Canada',
-  'United States',
+  'USA',
   'China',
   'Brazil',
   'Australia',
@@ -114,3 +118,10 @@ function addEventListeners() {
 }
 
 check.addEventListener('click', checkOrder);
+
+restart.addEventListener('click', () => window.location.reload());
+
+answerBtn.addEventListener('click', () => answerImg.style.transform = "translateX(0)");
+
+answerClose.addEventListener('click', () => answerImg.style.transform = "translateX(-200%)")
+

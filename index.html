@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Top 10 largest countries</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/3da1a747b2.js" crossorigin="anonymous"></script>
-  </head>
-  
-  <body>
-    <h1>TOP 10 largest countries by area in km<sup>2</sup></h1>
-    <p class="descr">Drag and drop the items into their corresponding spots</p>
-    <ul class="draggable-list" id="draggable-list"></ul>
-    <button class="check-btn" id="check">
-      Check Order
-      <i class="fas fa-check"></i>
-    </button>
 
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Top 10 largest countries</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/3da1a747b2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1>TOP 10 largest countries by area in km<sup>2</sup></h1>
+  <p class="descr">Drag and drop the items into their corresponding spots 
+    <span class="btn-container">
+      <button class="btn small-btn" id="restart" title="start again"><i class="fas fa-redo"></i></button>
+      <button class="btn small-btn" id="answer" title="show answer"><i class="fas fa-question"></i></button>
+    </span>
+  </p>
+
+  <ul class="draggable-list" id="draggable-list"></ul>
+  <button class="btn check-btn" id="check">
+    Check Order
+    <i class="fas fa-check"></i>
+  </button>
+
+  <div class="overlay" id="overlay">
+    <button id="close-btn" class="btn close-btn"><i class="fas fa-times"></i></button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
