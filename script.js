@@ -72,6 +72,25 @@ function getProperty() {
   return countriesArray;
 }
 
+function getProperty() {
+  const property = title.value;
+  console.log("property " + property);
+  countriesArray = [];
+  if (property === "area") {
+    countriesArray = [...largestCountries];
+    answerImg.style.backgroundImage = "url('./area.png')";
+  } else if (property === "population") {
+   countriesArray = [...largestPopulation];
+   answerImg.style.backgroundImage = "url('./population.png')";
+  } else {
+   countriesArray = [...largestGDP];
+   answerImg.style.backgroundImage = "url('./gdp.jpg')";
+  }
+  console.log("countriesArray from getProperty " + countriesArray);
+  draggable_list.innerHTML = ``;
+  return countriesArray;
+}
+
 // Insert list items into DOM
 function createList() {
   getProperty();
@@ -102,6 +121,34 @@ function createList() {
 }
 
 createList();
+
+function createList() {
+  getProperty();
+  console.log("countriesArray from createList " + countriesArray);
+  listItems = [];
+  console.log("listItems " + listItems);
+  [...countriesArray]
+    .map(item => ({value: item, sort: Math.random()}))
+    .sort((a, b) => a.sort - b.sort)
+    .map(item => item.value)
+    .forEach((country, index) => {
+      const listItem = document.createElement('li');
+      listItem.setAttribute('data-index', index);
+      listItem.innerHTML = `
+        <span class="number">${index + 1}</span>
+        <div class="draggable" draggable="true">
+          <p class="country-name">${country}</p>
+          <i class="fas fa-grip-lines"></i>
+        </div>
+      `;
+
+    listItems.push(listItem);
+    draggable_list.appendChild(listItem);
+    console.log("listItems " + listItems);
+  });
+
+  addEventListeners();
+}
 
 function dragStart() {
   //console.log('Event: ', 'dragstart');
