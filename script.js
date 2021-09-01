@@ -166,6 +166,12 @@ function addEventListeners() {
     item.addEventListener('drop', dragDrop);
     item.addEventListener('dragenter', dragEnter);
     item.addEventListener('dragleave', dragLeave);
+
+    //for mobile
+    item.addEventListener('touchmove', dragOver);
+    item.addEventListener('touchend', dragDrop);
+    item.addEventListener('touchstart', dragEnter);
+    item.addEventListener('touchleave', dragLeave);
   })
 }
 
