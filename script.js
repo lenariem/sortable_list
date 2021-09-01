@@ -55,19 +55,18 @@ let dragStartIndex;
 
 function getProperty() {
   const property = title.value;
-  console.log("property " + property);
   countriesArray = [];
   if (property === "area") {
     countriesArray = [...largestCountries];
     answerImg.style.backgroundImage = "url('./area.png')";
   } else if (property === "population") {
-   countriesArray = [...largestPopulation];
-   answerImg.style.backgroundImage = "url('./population.png')";
+    countriesArray = [...largestPopulation];
+    answerImg.style.backgroundImage = "url('./population.png')";
   } else {
-   countriesArray = [...largestGDP];
-   answerImg.style.backgroundImage = "url('./gdp.jpg')";
+    countriesArray = [...largestGDP];
+    answerImg.style.backgroundImage = "url('./gdp.jpg')";
   }
-  console.log("countriesArray from getProperty " + countriesArray);
+  
   draggable_list.innerHTML = ``;
   return countriesArray;
 }
@@ -75,11 +74,13 @@ function getProperty() {
 // Insert list items into DOM
 function createList() {
   getProperty();
-  console.log("countriesArray from createList " + countriesArray);
   listItems = [];
-  console.log("listItems " + listItems);
+  
   [...countriesArray]
-    .map(item => ({value: item, sort: Math.random()}))
+  .map(item => ({
+      value: item,
+      sort: Math.random()
+    }))
     .sort((a, b) => a.sort - b.sort)
     .map(item => item.value)
     .forEach((country, index) => {
@@ -93,10 +94,9 @@ function createList() {
         </div>
       `;
 
-    listItems.push(listItem);
-    draggable_list.appendChild(listItem);
-    console.log("listItems " + listItems);
-  });
+      listItems.push(listItem);
+      draggable_list.appendChild(listItem);
+    });
 
   addEventListeners();
 }
@@ -122,7 +122,7 @@ function dragOver(e) {
 
 function dragDrop() {
   const dragEndIndex = +this.getAttribute('data-index');
-  swapItems(dragStartIndex,dragEndIndex);
+  swapItems(dragStartIndex, dragEndIndex);
 
   this.classList.remove('over');
 }
@@ -141,7 +141,7 @@ function checkOrder() {
   listItems.forEach((listItem, index) => {
     const countryName = listItem.querySelector('.draggable').innerText.trim();
 
-    if(countryName !== countriesArray[index].toUpperCase()) {
+    if (countryName !== countriesArray[index].toUpperCase()) {
       listItem.classList.add('wrong');
       /* console.log( countryName );
       console.log(largestCountries[index]); */
