@@ -49,34 +49,9 @@ const largestGDP = [
 let listItems = [];
 //console.log(listItems);
 
-
 let countriesArray = [];
-console.log("countriesArray " + countriesArray);
 
-let arrToCheck = [];
 let dragStartIndex;
-
-function getCountriesArr() {
-  const property = title.value; 
-  console.log("property " + property );
-  console.log("countriesArray length " + countriesArray.length );
-  console.log("countriesArray " + countriesArray.map(e => e));
-  if (property === "area") {
-    countriesArray = [...largestCountries];
-    answerImg.style.backgroundImage = "url('./area.png')";
-    arrToCheck = largestCountries;
-  } else if (property === "population") {
-   countriesArray = [...largestPopulation];
-   answerImg.style.backgroundImage = "url('./population.png')";
-   arrToCheck = largestPopulation;
-  } else {
-   countriesArray = [...largestGDP];
-   answerImg.style.backgroundImage = "url('./gdp.jpg')";
-   arrToCheck = largestGDP;
-  }
-  
-  return countriesArray;
-}
 
 function getProperty() {
   const property = title.value;
@@ -98,32 +73,6 @@ function getProperty() {
 }
 
 // Insert list items into DOM
-function createList() {
-  getCountriesArr();
-  draggable_list.innerHTML = ``;
-  [...countriesArray]
-    .map(item => ({value: item, sort: Math.random()}))
-    .sort((a, b) => a.sort - b.sort)
-    .map(item => item.value)
-    .forEach((country, index) => {
-      const listItem = document.createElement('li');
-      listItem.setAttribute('data-index', index);
-      listItem.innerHTML = `
-        <span class="number">${index + 1}</span>
-        <div class="draggable" draggable="true">
-          <p class="country-name">${country}</p>
-          <i class="fas fa-grip-lines"></i>
-        </div>
-      `;
-
-    listItems.push(listItem);
-    draggable_list.appendChild(listItem);
-  });
-
-  addEventListeners();
-}
-createList();
-
 function createList() {
   getProperty();
   console.log("countriesArray from createList " + countriesArray);
@@ -152,6 +101,8 @@ function createList() {
   addEventListeners();
 }
 
+createList();
+
 function dragStart() {
   //console.log('Event: ', 'dragstart');
   dragStartIndex = +this.closest('li').getAttribute('data-index');
@@ -172,7 +123,6 @@ function dragOver(e) {
 function dragDrop() {
   const dragEndIndex = +this.getAttribute('data-index');
   swapItems(dragStartIndex,dragEndIndex);
-  console.log("dragStartIndex,dragEndIndex " + dragStartIndex,dragEndIndex)
 
   this.classList.remove('over');
 }
@@ -190,12 +140,14 @@ function swapItems(fromIndex, toIndex) {
 function checkOrder() {
   listItems.forEach((listItem, index) => {
     const countryName = listItem.querySelector('.draggable').innerText.trim();
-    console.log("countryName " + countryName);
-    console.log("arrToCheck " + arrToCheck);
+
     if(countryName !== countriesArray[index].toUpperCase()) {
       listItem.classList.add('wrong');
+      /* console.log( countryName );
+      console.log(largestCountries[index]); */
     } else {
       listItem.classList.remove('wrong');
+      /* console.log( countryName ) */
       listItem.classList.add('right');
     }
   });
@@ -204,8 +156,7 @@ function checkOrder() {
 function addEventListeners() {
   const draggables = document.querySelectorAll('.draggable');
   const dragListItems = document.querySelectorAll('.draggable-list li');
-  console.log("dragListItems " + dragListItems.forEach(item => item))
-  
+
   draggables.forEach(item => {
     item.addEventListener('dragstart', dragStart);
   })
@@ -220,16 +171,13 @@ function addEventListeners() {
 
 check.addEventListener('click', checkOrder);
 
-title.addEventListener('change', createList);
-
 restart.addEventListener('click', () => window.location.reload());
 
 answerBtn.addEventListener('click', () => answerImg.style.transform = "translateX(0)");
 
 answerClose.addEventListener('click', () => answerImg.style.transform = "translateX(-200%)");
-
-//close with esc key
 document.addEventListener('keydown', e =>
   e.key === "Escape" ? answerImg.style.transform = "translateX(-200%)" : false
 );
 
+title.addEventListener('change', createList);
