@@ -8,9 +8,8 @@ https://lenariem.github.io/sortable_list/
 
 ### Technologies used: 
 * JavaScript
-* CSS, Media queries
+* CSS
 * HTML
-* responsive for different devices
 
 ### User can
 - Select a comparison parameter

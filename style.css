@@ -148,7 +148,7 @@ select:focus {
   margin: 20px auto 0;
   width: 80%;
   height: 95vh;
-  background-image: url(./area.png);
+  background-image: url(./img/area.png);
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateX(-200%);
