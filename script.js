@@ -58,13 +58,13 @@ function getProperty() {
   countriesArray = [];
   if (property === "area") {
     countriesArray = [...largestCountries];
-    answerImg.style.backgroundImage = "url('./area.png')";
+    answerImg.style.backgroundImage = "url('./img/area.png')";
   } else if (property === "population") {
     countriesArray = [...largestPopulation];
-    answerImg.style.backgroundImage = "url('./population.png')";
+    answerImg.style.backgroundImage = "url('./img/population.png')";
   } else {
     countriesArray = [...largestGDP];
-    answerImg.style.backgroundImage = "url('./gdp.jpg')";
+    answerImg.style.backgroundImage = "url('./img/gdp.jpg')";
   }
   
   draggable_list.innerHTML = ``;
