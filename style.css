@@ -30,6 +30,22 @@ h1 {
   margin: 0 auto 10px;
 }
 
+.title-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid var(--border-color);
+  font-size: inherit;
+  font-weight: inherit;
+  background: transparent;
+  cursor: pointer;
+  padding: 5px;
+}
+
+select:focus{
+outline: 0;
+}
+
 .descr {
   font-size: 24px;
   margin: 0 auto;
@@ -141,6 +157,7 @@ h1 {
   transform: translateX(-200%);
   transition: transform 0.8s ease-in-out;
 }
+
 
 @media (max-width: 1450px) {
   .draggable-list {
