@@ -7,10 +7,10 @@
 https://lenariem.github.io/sortable_list/
 
 ### Technologies used: 
-* JavaScript;
-* CSS, Media queries;
-* HTML;
-* responsive for different devices;
+* JavaScript
+* CSS, Media queries
+* HTML
+* responsive for different devices
 
 ### User can
 - Select a comparison parameter
